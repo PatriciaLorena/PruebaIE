@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Botón Interactivo</title>
+</head>
+<body>
+  <h1>Botón Interactivo</h1>
+  <button onclick="mostrarMensaje()">Haz clic aquí</button>
+  <p id="mensaje">Bienvenido</p>
+  <script>
+    const mensajes = ['¡Hola!','¿Cómo estás?','JS es genial!','¡Sigue practicando!'];
+    let contador = 0;
+    function mostrarMensaje() {
+      document.getElementById('mensaje').innerHTML = mensajes[contador];
+      contador = (contador + 1) % mensajes.length;
+    }
+  </script>
+</body></html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Tarjeta Personal</title>
+
+  <!-- Estas 3 líneas son críticas -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#2563eb">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d0d1a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .tarjeta {
+      background: #12122a;
+      border: 1px solid #2563eb;
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      max-width: 340px;
+      width: 90%;
+    }
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #2563eb;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+    }
+    h1 { margin: 0 0 8px; font-size: 24px; }
+    p  { color: #94a3b8; margin: 4px 0; }
+    .badge {
+      display: inline-block;
+      background: #2563eb;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin-top: 16px;
+    }
+    #estado {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #10b981;
+    }
+  </style>
+</head>
+<body>
+  <div class="tarjeta">
+    <div class="avatar">👤</div>
+    <h1>Juan Pérez</h1>
+    <p>Desarrollador Web</p>
+    <p>juan@email.com</p>
+    <span class="badge">Disponible para proyectos</span>
+    <p id="estado">✔ App funcionando</p>
+  </div>
+
+  <script>
+    // Registrar el Service Worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('sw.js')
+        .then(() => {
+          document.getElementById('estado').textContent = '✔ PWA lista e instalable';
+        })
+        .catch(err => console.error('Error SW:', err));
+    }
+  </script>
+</body>
+</html>

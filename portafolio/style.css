@@ -1,0 +1,25 @@
+.tarjeta {
+  background-color: #e4641e;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+h1
+ {
+  font-size: 24px;
+  font-family: Arial;
+}
+
+p {
+  font-size: 16px;
+  font-family: Arial;
+  color: blueviolet;
+}
+
+h3 {
+  font-size: 16px;
+  font-family: Arial;
+  color: rgb(51, 21, 219);
+}
